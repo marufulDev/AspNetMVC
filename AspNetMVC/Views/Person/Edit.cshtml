@@ -1,0 +1,80 @@
+﻿@model AspNetMVC.Models.View_Model.PersonSaveViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="d-flex mb-3">
+        <div class="p-2">
+            <blockquote class="blockquote float-left">
+                <p>New Person Add</p>
+            </blockquote>
+        </div>
+    </div>
+</div>
+@using (Html.BeginForm("Save", "Person", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.BusinessEntityID)
+<form class="row g-3 needs-validation" novalidate>
+    <div class="row">
+        <div class="col-md-6 col-lg-6">
+            <label for="validationCustom01" class="form-label">Person Type</label>
+            @Html.TextBoxFor(model => model.PersonType, htmlAttributes: new { id = "validationCustom01", @class = "form-control", required = "required" })
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide a valid Person Type.
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <label for="validationCustom03" class="form-label">Title</label>
+            @Html.TextBoxFor(model => model.Title, htmlAttributes: new { id = "validationCustom03", @class = "form-control", required = "required" })
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide a valid Title.
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-lg-4">
+            <label for="validationCustom04" class="form-label">First Name</label>
+            @Html.TextBoxFor(model => model.FirstName, htmlAttributes: new { id = "validationCustom04", @class = "form-control", required = "required" })
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide a valid First Name.
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            <label for="validationCustom05" class="form-label">Middle Name</label>
+            @Html.TextBoxFor(model => model.MiddleName, htmlAttributes: new { id = "validationCustom05", @class = "form-control", required = "required" })
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide a valid Middle Name.
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            <label for="validationCustom06" class="form-label">Last Name</label>
+            @Html.TextBoxFor(model => model.LastName, htmlAttributes: new { id = "validationCustom06", @class = "form-control", required = "required" })
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide a valid Last Name.
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+</form>
+}
+
+
