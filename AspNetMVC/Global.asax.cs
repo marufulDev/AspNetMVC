@@ -12,6 +12,7 @@ namespace AspNetMVC
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            UnityConfig.RegisterComponents();                           // <----- Add this line
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
